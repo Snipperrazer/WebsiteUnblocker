@@ -1,11 +1,5 @@
-const express = require('express');
+const dns = require('dns');
 
-const app = express();
-
-app.get('/', (req, res) => {
-  res.send('Hello Express app!')
-});
-
-app.listen(3000, () => {
-  console.log('server started');
+dns.lookup('youtube.com', (err, address, family) => {
+  console.log('address: %j family: IPv%s', address, family);
 });
